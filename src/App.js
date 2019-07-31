@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
+import Home from './home/Home'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -31,6 +32,9 @@ class App extends Component {
       <SnackbarProvider maxSnack={3}>
         <Header user={user} />
         <main className="container">
+          <Route path='/' render={() => (
+            <Home alert={this.alert} setUser={this.setUser} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
