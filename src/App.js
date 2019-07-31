@@ -3,7 +3,7 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-import Header from './header/Header'
+import ButtonAppBar from './header/components/ButtonAppBar'
 import Home from './home/Home'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
@@ -30,7 +30,7 @@ class App extends Component {
 
     return (
       <SnackbarProvider maxSnack={3}>
-        <Header user={user} />
+        <ButtonAppBar user={user} />
         <main className="container">
           <Route path='/' render={() => (
             <Home alert={this.alert} setUser={this.setUser} />
