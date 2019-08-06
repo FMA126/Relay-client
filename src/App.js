@@ -3,14 +3,25 @@ import './App.scss'
 import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
-import ButtonAppBar from './header/components/ButtonAppBar'
+import ButtonAppBar from './header/components/ButtonAppBar/ButtonAppBar'
 import Home from './home/Home'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import Quotes from './quote/components/Quotes/Quotes'
+import Quote from './quote/components/Quote/Quote'
+import QuoteCreate from './quote/components/QuoteCreate/QuoteCreate'
+import QuoteUpdate from './quote/components/QuoteUpdate/QuoteUpdate'
 
 import { SnackbarProvider } from 'notistack'
+
+// <AuthenticatedRoute user={user} exact path='/quotes/:id' render={() => (
+//   <Quote alert={this.alert} user={user} />
+// )} />
+// <AuthenticatedRoute user={user} exact path='/quotes/:id/quote-update' render={() => (
+//   <QuoteUpdate alert={this.alert} user={user} />
+// )} />
 
 class App extends Component {
   constructor () {
@@ -46,6 +57,18 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/quotes' render={() => (
+            <Quotes alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/quotes/:id' render={() => (
+            <Quote alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/quote-create' render={() => (
+            <QuoteCreate alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/quotes/:id/quote-update' render={() => (
+            <QuoteUpdate alert={this.alert} user={user} />
           )} />
         </main>
       </SnackbarProvider>
