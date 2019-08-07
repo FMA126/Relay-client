@@ -57,7 +57,7 @@ const SignUpForm = ({ state, handleSubmit, handleChange }) => {
         </FormControl>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', margin: '20px 0' }}>
           <Button type="submit" variant="outlined" color="primary">
-            SignIn
+            Sign up
           </Button>
           <Link to={'/sign-in'} style={{ textDecoration: 'none', marginTop: '20px' }}>Already a member? Sign in here.</Link>
         </div>

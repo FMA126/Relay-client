@@ -76,7 +76,7 @@ const QuoteForm = ({ quote, handleSubmit, handleChange, cancelPath }) => {
         <Button type="submit" variant="outlined" color="primary">
           Submit
         </Button>
-        <Button variant="outlined" color="primary">
+        <Button variant="outlined" color="secondary">
           <Link to={cancelPath} style={{ textDecoration: 'none', color: 'inherit' }}>Cancel</Link>
         </Button>
       </div>
