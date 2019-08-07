@@ -4,7 +4,7 @@ This app was designed by Merritt Blanks as part of a project for General Assembl
 The app is designed to provide an easy way for users to compare rental truck prices.
 
 ### Relevant Links
-Frontend deployed: https://fma126.github.io/Relay/ Backend repo: https://github.com/FMA126/relay-api Backend deployed: https://secret-depths-15843.herokuapp.com/
+Frontend deployed: https://fma126.github.io/Relay-client/ Backend repo: https://github.com/FMA126/relay-api Backend deployed: https://secret-depths-15843.herokuapp.com/
 
 ### Installation Instructions
 1. Fork and clone
