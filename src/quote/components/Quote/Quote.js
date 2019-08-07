@@ -56,12 +56,12 @@ class Quote extends Component {
     const ownerButtons = (
       <div style={{ display: 'flex', justifyContent: 'space-around', margin: '20px 0' }}>
         <Button variant="outlined" color="primary">
-          <Link to={`/quotes/${this.props.match.params.id}/update-quote`} style={{ textDecoration: 'none', color: 'inherit' }}>Update this quote</Link>
+          <Link to={`/quotes/${this.props.match.params.id}/quote-update`} style={{ textDecoration: 'none', color: 'inherit' }}>Update this quote</Link>
         </Button>
-        <Button onClick={this.destroy} variant="outlined" color="primary">
+        <Button onClick={this.destroy} variant="outlined" color="secondary">
           Delete this quote
         </Button>
-        <Button variant="outlined" color="primary">
+        <Button variant="outlined" color="default">
           <Link to={'/quotes'} style={{ textDecoration: 'none', color: 'inherit' }}>Back to list</Link>
         </Button>
       </div>
@@ -79,8 +79,8 @@ class Quote extends Component {
     }
 
     return (
-      <Paper>
-        <Table>
+      <Paper style={{ marginTop: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <Table style={{ maxWidth: '700px' }}>
           <TableHead>
             <TableRow>
               <TableCell>Company</TableCell>

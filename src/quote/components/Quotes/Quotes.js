@@ -62,8 +62,8 @@ class Quotes extends Component {
     }
 
     return (
-      <Paper>
-        <Table>
+      <Paper style={{ marginTop: '60px', display: 'flex', justifyContent: 'center' }}>
+        <Table style={{ maxWidth: '700px' }}>
           <TableHead>
             <TableRow>
               <TableCell>Quoted on date</TableCell>

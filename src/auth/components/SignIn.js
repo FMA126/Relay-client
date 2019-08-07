@@ -3,11 +3,13 @@ import { withRouter } from 'react-router-dom'
 import { withSnackbar } from 'notistack'
 import { signIn } from '../api'
 import messages from '../messages'
+import SignInForm from './SignInForm'
+
+import Paper from '@material-ui/core/Paper'
 
 class SignIn extends Component {
   constructor () {
     super()
-
     this.state = {
       email: '',
       password: ''
@@ -35,31 +37,14 @@ class SignIn extends Component {
   }
 
   render () {
-    const { email, password } = this.state
-
     return (
-      <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
-        <label htmlFor="email">Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={this.handleChange}
+      <Paper>
+        <SignInForm
+          state={this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.onSignIn}
         />
-        <label htmlFor="password">Password</label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Sign In</button>
-      </form>
+      </Paper>
     )
   }
 }

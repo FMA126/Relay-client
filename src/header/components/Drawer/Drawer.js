@@ -41,7 +41,7 @@ export default function Header () {
       onKeyDown={toggleSwipeableDrawer(side, false)}
     >
       <List>
-        {['Home', 'About', 'Quote List', 'New Quote', 'Change Password', 'Sign Out'].map((text, index) => (
+        {['Home', 'Quote List', 'New Quote'].map((text, index) => (
           <ListItem button component={Link} to={listItemLink(index)} key={text}>
             <ListItemIcon>{iconIndex(index)}</ListItemIcon>
             <ListItemText primary={text} />

@@ -43,7 +43,7 @@ class App extends Component {
       <SnackbarProvider maxSnack={3}>
         <ButtonAppBar user={user} />
         <main className="container">
-          <Route path='/' render={() => (
+          <Route exact path='/' render={() => (
             <Home alert={this.alert} setUser={this.setUser} />
           )} />
           <Route path='/sign-up' render={() => (

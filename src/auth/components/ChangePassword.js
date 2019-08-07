@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom'
 import { withSnackbar } from 'notistack'
 import { changePassword } from '../api'
 import messages from '../messages'
+import PasswordForm from './ChangePasswordForm'
+
+import Paper from '@material-ui/core/Paper'
 
 class ChangePassword extends Component {
   constructor () {
@@ -34,32 +37,14 @@ class ChangePassword extends Component {
   }
 
   render () {
-    const { oldPassword, newPassword } = this.state
-
     return (
-      <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
-
-        <label htmlFor="oldpw">Old Password</label>
-        <input
-          required
-          name="oldPassword"
-          value={oldPassword}
-          type="password"
-          placeholder="Old Password"
-          onChange={this.handleChange}
+      <Paper>
+        <PasswordForm
+          state={this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.onSignIn}
         />
-        <label htmlFor="newPassword">New Password</label>
-        <input
-          required
-          name="newPassword"
-          value={newPassword}
-          type="password"
-          placeholder="New Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Change Password</button>
-      </form>
+      </Paper>
     )
   }
 }
