@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
+import Button from '@material-ui/core/Button'
 
 import { allQuotes } from '../../api'
 import { formattedDate } from './helpers'
@@ -54,7 +55,12 @@ class Quotes extends Component {
     }
 
     if (quotes.length === 0) {
-      return <p>No quotes</p>
+      return (
+        <Paper style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <h3>Get a quote now</h3>
+          <Button variant="contained" color="primary" onClick={() => this.nextPath('/quote-create')}>New Quote</Button>
+        </Paper>
+      )
     }
 
     if (error) {

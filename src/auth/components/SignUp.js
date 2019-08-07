@@ -31,7 +31,7 @@ class SignUp extends Component {
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
       .then(() => enqueueSnackbar(messages.signUpSuccess, { variant: 'success' }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/quotes'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '', passwordConfirmation: '' })
@@ -45,7 +45,7 @@ class SignUp extends Component {
         <SignUpForm
           state={this.state}
           handleChange={this.handleChange}
-          handleSubmit={this.onSignIn}
+          handleSubmit={this.onSignUp}
         />
       </Paper>
     )

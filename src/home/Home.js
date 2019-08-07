@@ -40,7 +40,7 @@ function getStepContent (step) {
   case 1:
     return 'Enter the your moving information'
   case 2:
-    return 'Relay fetches prices from Uhaul, Budget, and Pesnke'
+    return 'Relay fetches prices from Uhaul, Budget, and Penske'
   default:
     return 'Unknown step'
   }
